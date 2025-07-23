@@ -4,7 +4,7 @@ import Home from './Components/Pages/Home'
 import Auth from './Components/Pages/Auth'
 import Saved from './Components/Pages/Saved'
 import Properties from './Components/Pages/Properties'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
