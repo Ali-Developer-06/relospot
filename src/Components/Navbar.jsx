@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FiHome, FiSearch, FiHeart, FiUser, FiMenu, FiX } from 'react-icons/fi';
+import { FiHome, FiSearch, FiHeart, FiUser, FiMenu, FiX, FiMessageSquare } from 'react-icons/fi';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -10,6 +10,7 @@ const navItems = [
     { path: '/', name: 'Home', icon: <FiHome className="mr-1" /> },
     { path: '/properties', name: 'Properties', icon: <FiSearch className="mr-1" /> },
     { path: '/saved', name: 'Saved', icon: <FiHeart className="mr-1" /> },
+    { path: '/contact', name: 'Contact', icon: <FiMessageSquare className="mr-1" /> },
     { path: '/auth', name: 'Account', icon: <FiUser className="mr-1" /> }
 ];
 
@@ -31,7 +32,8 @@ return (
                     ${ isActive ? 'bg-blue-100 text-blue-600' : 'text-gray-700 hover:bg-gray-100'}`}
                     onClick={() => {
                         if (item.path === '/auth') {
-                        navigate('/auth', { state: { authType: 'login' } });}}}>
+                        navigate('/auth', { state: { authType: 'login' }});
+                        }}}>
                     {item.icon}{item.name}
                 </NavLink>))}
             </nav>
