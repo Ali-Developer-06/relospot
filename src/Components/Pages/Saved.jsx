@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiHeart, FiShare2, FiTrash2, FiChevronRight, FiX, FiMapPin } from 'react-icons/fi';
 
-const SavedProperties = () => {
+const Saved = () => {
 const navigate = useNavigate();
-const [savedProperties, setSavedProperties] = useState([
+const [featuredProperties, setFeaturedProperties] = useState([
     {
         id: 1,
         title: "Luxury Villa in Miami",
@@ -26,7 +26,7 @@ const [showShareTooltip, setShowShareTooltip] = useState(false);
 
 // Delete property
 const handleDelete = (id) => {
-    setSavedProperties(savedProperties.filter(property => property.id !== id));
+    setFeaturedProperties(featuredProperties.filter(property => property.id !== id));
 };
 
 // Share property
@@ -49,15 +49,15 @@ return (
             <div className="container mx-auto px-4">
                 <h1 className="text-2xl font-bold text-gray-800">Saved Properties</h1>
                 <p className="text-gray-600">
-                {savedProperties.length} {savedProperties.length === 1 ? 'property' : 'properties'} saved</p>
+                {featuredProperties.length} {featuredProperties.length === 1 ? 'property' : 'properties'} saved</p>
             </div>
         </div>
 
         {/* Main Content */}
         <div className="container mx-auto py-8 px-4 my-8">
-            {savedProperties.length > 0 ? (
+            {featuredProperties.length > 0 ? (
                 <div className="space-y-6">
-                    {savedProperties.map(property => (
+                    {featuredProperties.map(property => (
                         <div key={property.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                             <div className="flex flex-col md:flex-row">
                                 {/* Property Image */}
@@ -209,4 +209,4 @@ return (
 );
 };
 
-export default SavedProperties;
+export default Saved;

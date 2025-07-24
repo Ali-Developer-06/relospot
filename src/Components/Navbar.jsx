@@ -20,7 +20,7 @@ return (
             {/* Logo */}
             <div 
                 className="text-2xl font-bold text-blue-600 cursor-pointer" 
-                onClick={() => navigate('/')}> USEstates
+                onClick={() => navigate('/')}> Relospot
             </div>
 
             {/* Desktop Navigation */}

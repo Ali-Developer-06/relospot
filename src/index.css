@@ -1,5 +1,8 @@
 @import "tailwindcss";
-input{
-    border: none;
+input,
+textarea{
     outline: none;
+}
+button{
+    cursor: pointer;
 }

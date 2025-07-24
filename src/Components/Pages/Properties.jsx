@@ -5,7 +5,7 @@ import { FiMapPin, FiFilter } from 'react-icons/fi';
 
 const Properties = () => {
     const navigate = useNavigate();
-    const allProperties = [
+    const featuredProperties = [
     {
         id: 1,
         title: "Luxury Villa in Miami",
@@ -36,11 +36,11 @@ const [filters, setFilters] = useState({
     location: ''
 });
 
-const [filteredProperties, setFilteredProperties] = useState(allProperties);
+const [filteredProperties, setFilteredProperties] = useState(featuredProperties);
 
 // Apply filters
 const applyFilters = () => {
-    const results = allProperties.filter(property => {
+    const results = featuredProperties.filter(property => {
         return (
             (filters.minPrice === '' || property.price >= Number(filters.minPrice)) &&
             (filters.maxPrice === '' || property.price <= Number(filters.maxPrice)) &&
