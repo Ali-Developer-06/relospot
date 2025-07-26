@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "Luxury Villa in Miami",
+      "price": 750000,
+      "beds": 4,
+      "baths": 3,
+      "sqft": 2500,
+      "location": "Miami, FL",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "tags": ["Pool", "Waterfront"]
+    },
+    {
+      "id": 2,
+      "title": "Condo in NYC",
+      "price": 550000,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1200,
+      "location": "New York, NY",
+      "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      "tags": ["City View"]
+    }
+  ]

@@ -73,20 +73,20 @@ return (
                                     <div className="flex justify-between items-start">
                                         <div>
                                             <h3 className="text-xl font-semibold">{property.title}</h3>
-                                            <p className="text-blue-600 font-bold text-lg mt-1">
+                                            <p className="text-green-700 font-bold text-lg mt-1">
                                                 ${property.price.toLocaleString()}</p>
                                         </div>
                                         <div className="flex space-x-2">
                                             <button 
                                                 onClick={() => handleDelete(property.id)}
-                                                className="p-2 text-gray-400 hover:text-red-500 transition-colors"
+                                                className="p-2 text-gray-400 transition-colors"
                                                 aria-label="Remove property">
                                                 <FiTrash2 className='cursor-pointer'/>
                                             </button>
                                             <div className="relative">
                                                 <button 
                                                     onClick={() => handleShare(property)}
-                                                    className="p-2 text-gray-400 hover:text-blue-500 transition-colors"
+                                                    className="p-2 text-gray-400 transition-colors"
                                                     aria-label="Share property">
                                                     <FiShare2 />
                                                 </button>
@@ -111,7 +111,7 @@ return (
                                         </span>
                                         <button 
                                             onClick={() => handleViewDetails(property)}
-                                            className="flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                                            className="flex items-center text-green-700 font-medium cursor-pointer">
                                             View Details <FiChevronRight className="ml-1" />
                                         </button>
                                     </div>
@@ -125,7 +125,7 @@ return (
                     <FiHeart className="mx-auto text-gray-300 text-5xl mb-4" />
                     <h3 className="text-xl font-medium text-gray-700 mb-2">No saved properties yet</h3>
                     <p className="text-gray-500 mb-6">Save properties you're interested in by clicking the heart icon</p>
-                    <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"> 
+                    <button className="bg-green-700 text-white px-6 py-2 rounded-lg"> 
                         Browse Properties 
                     </button>
                 </div>
@@ -178,7 +178,7 @@ return (
                             <h4 className="font-bold mb-2">Amenities</h4>
                             <div className="flex flex-wrap gap-2 mb-4">
                                 {selectedProperty.amenities.map((amenity, index) => (
-                                    <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                                    <span key={index} className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
                                         {amenity}
                                     </span>
                                 ))}
@@ -190,7 +190,7 @@ return (
                             <div className="flex space-x-3">
                                 <button 
                                     onClick={() => navigate('/contact')}
-                                    className="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                                    className="flex-1 bg-green-700 text-white py-2 rounded-lg">
                                     Contact Agent
                                 </button>
                                     <button 

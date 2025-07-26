@@ -50,7 +50,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-blue-600 shadow-sm py-12 text-white">
+      <div className="bg-green-700 shadow-sm py-12 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold mb-2">Contact Our Team</h1>
           <p className="t max-w-2xl mx-auto">
@@ -84,7 +84,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full pl-10 pr-4 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+                    className={`w-full pl-10 pr-4 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700`}
                   />
                 </div>
                 {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
@@ -102,7 +102,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full pl-10 pr-4 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+                    className={`w-full pl-10 pr-4 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700`}
                   />
                 </div>
                 {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
@@ -120,7 +120,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700"
                   />
                 </div>
               </div>
@@ -137,7 +137,7 @@ const Contact = () => {
                     rows="5"
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full pl-10 pr-4 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+                    className={`w-full pl-10 pr-4 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700`}
                   ></textarea>
                 </div>
                 {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
@@ -147,7 +147,7 @@ const Contact = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={`w-full py-3 rounded-lg flex items-center justify-center gap-2 ${
-                  isSubmitting ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'
+                  isSubmitting ? 'bg-green-600' : 'bg-green-700'
                 } text-white transition-colors`}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -162,8 +162,8 @@ const Contact = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-full mr-4">
-                    <FiPhone className="text-blue-600" />
+                  <div className="bg-green-100 p-3 rounded-full mr-4">
+                    <FiPhone className="text-green-700" />
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-800">Phone</h3>
@@ -173,8 +173,8 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-full mr-4">
-                    <FiMail className="text-blue-600" />
+                  <div className="bg-green-100 p-3 rounded-full mr-4">
+                    <FiMail className="text-green-700" />
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-800">Email</h3>
@@ -184,8 +184,8 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-full mr-4">
-                    <FiMapPin className="text-blue-600" />
+                  <div className="bg-green-100 p-3 rounded-full mr-4">
+                    <FiMapPin className="text-green-700" />
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-800">Office</h3>

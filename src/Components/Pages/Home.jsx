@@ -1,41 +1,23 @@
-import React from 'react';
-import { FiSearch, FiMapPin, FiHeart } from 'react-icons/fi';
+import { useState } from 'react';
+import propertiesData from '../../Data/Properties.json';
+import { FiHeart, FiSearch, FiMapPin } from 'react-icons/fi';
 
 const Home = () => {
-  const featuredProperties = [
-    {
-      id: 1,
-      title: "Luxury Condo in Miami, FL",
-      price: "$750,000",
-      beds: 3,
-      baths: 2,
-      sqft: "2,100 sqft",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      id: 2,
-      title: "Suburban Home in Austin, TX",
-      price: "$450,000",
-      beds: 4,
-      baths: 3,
-      sqft: "2,800 sqft",
-      image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      id: 3,
-      title: "Modern Townhouse in Seattle, WA",
-      price: "$620,000",
-      beds: 3,
-      baths: 2.5,
-      sqft: "1,950 sqft",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    },
-  ];
+  const [properties, setProperties] = useState(propertiesData);
+  const [savedProperties, setSavedProperties] = useState([]);
+
+  const toggleSaved = (id) => {
+    if (savedProperties.includes(id)) {
+      setSavedProperties(savedProperties.filter(item => item !== id));
+    } else {
+      setSavedProperties([...savedProperties, id]);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-blue-600 text-white py-20 px-6">
+      <div className="text-white py-20 px-6 bg-green-700">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Find Your Dream Home in the USA</h1>
           <p className="text-xl mb-8">Search from 1M+ listings coast to coast</p>
@@ -61,7 +43,7 @@ const Home = () => {
               <option>$500K - $1M</option>
               <option>$1M+</option>
             </select>
-            <button className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 flex items-center justify-center">
+            <button className="bg-green-700 text-white p-2 rounded-lg flex items-center justify-center">
               <FiSearch className="mr-1" /> Search
             </button>
           </div>
@@ -72,7 +54,7 @@ const Home = () => {
       <div className="container mx-auto py-12 px-6">
         <h2 className="text-3xl font-bold mb-8 text-gray-800">Featured Properties</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProperties.map((property) => (
+          {properties.map((property) => (
             <div key={property.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <img 
                 src={property.image} 
@@ -82,16 +64,37 @@ const Home = () => {
               <div className="p-4">
                 <div className="flex justify-between items-start">
                   <h3 className="text-xl font-semibold text-gray-800">{property.title}</h3>
-                  <button className="text-gray-400 hover:text-red-500"><FiHeart /></button>
+                  <button 
+                    onClick={() => toggleSaved(property.id)}
+                    className={`p-1 ${savedProperties.includes(property.id) ? 'text-red-500' : 'text-gray-400 hover:text-red-500'}`}
+                  >
+                    <FiHeart className={savedProperties.includes(property.id) ? 'fill-current' : ''} />
+                  </button>
                 </div>
-                <p className="text-blue-600 font-bold text-lg mt-2">{property.price}</p>
+                <p className="text-green-700 font-bold text-lg mt-2">
+                  ${property.price.toLocaleString()}
+                </p>
                 <div className="flex mt-4 text-gray-600">
                   <span className="mr-4">{property.beds} Beds</span>
                   <span className="mr-4">{property.baths} Baths</span>
-                  <span>{property.sqft}</span>
+                  <span>{property.sqft.toLocaleString()} sqft</span>
                 </div>
-                <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
-                View Details</button>
+                <div className="mt-3 flex items-center text-gray-500">
+                  <FiMapPin className="mr-1" />
+                  <span>{property.location}</span>
+                </div>
+                {property.tags.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {property.tags.map(tag => (
+                      <span key={tag} className="bg-green-100 text-green-700 font-medium px-2 py-1 rounded-full text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <button className="mt-4 w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-800">
+                  View Details
+                </button>
               </div>
             </div>
           ))}

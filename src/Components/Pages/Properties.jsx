@@ -1,32 +1,21 @@
 import { useState } from 'react';
 import Calculator from './Calculator';
 import { useNavigate } from 'react-router-dom';
-import { FiMapPin, FiFilter } from 'react-icons/fi';
+import { FiMapPin, FiFilter, FiHeart } from 'react-icons/fi';
+import propertiesData from '../../Data/Properties.json';
 
 const Properties = () => {
     const navigate = useNavigate();
-    const featuredProperties = [
-    {
-        id: 1,
-        title: "Luxury Villa in Miami",
-        price: 750000,
-        beds: 4,
-        baths: 3,
-        sqft: 2500,
-        location: "Miami, FL",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-    },
-    {
-        id: 2,
-        title: "Modern Apartment in NYC",
-        price: 550000,
-        beds: 2,
-        baths: 2,
-        sqft: 1200,
-        location: "New York, NY",
-        image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
-    },
-];
+    const [properties, setProperties] = useState(propertiesData);
+    const [savedProperties, setSavedProperties] = useState([]);
+
+    const toggleSaved = (id) => {
+        if (savedProperties.includes(id)) {
+            setSavedProperties(savedProperties.filter(item => item !== id));
+        } else {
+            setSavedProperties([...savedProperties, id]);
+        }
+    };
 
 // State for filters
 const [filters, setFilters] = useState({
@@ -36,7 +25,6 @@ const [filters, setFilters] = useState({
     location: ''
 });
 
-const [filteredProperties, setFilteredProperties] = useState(featuredProperties);
 
 // Apply filters
 const applyFilters = () => {
@@ -70,7 +58,7 @@ return (
                     </div>
                     {/* Filters Button */}
                     <button 
-                        className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg"
+                        className="flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-lg"
                         onClick={applyFilters}>
                         <FiFilter />
                         Apply Filters
@@ -118,29 +106,48 @@ return (
             </div>
         </div>
 
-        {/* Property Listings */}
-        <div className="container mx-auto py-8 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredProperties.map(property => (
-                    <div key={property.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        {/* Property Listing */}
+        <div className="container mx-auto py-12 px-6">
+            <h2 className="text-3xl font-bold mb-8 text-gray-800">Featured Properties</h2>
+            <div  iv className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {properties.map((property) => (
+                    <div key={property.id} 
+                        className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img 
                             src={property.image} 
-                            alt={property.title}
-                            className="w-full h-48 object-cover"/>
+                            alt={property.title} 
+                            className="w-full h-48 object-cover"
+                        />
                         <div className="p-4">
-                            <h3 className="text-xl font-semibold">{property.title}</h3>
-                            <p className="text-blue-600 font-bold text-lg mt-2">${property.price.toLocaleString()}</p>
-                            <div className="flex mt-3 text-gray-600">
+                            <div className="flex justify-between items-start">
+                                <h3 className="text-xl font-semibold text-gray-800">{property.title}</h3>
+                                <button 
+                                    onClick={() => toggleSaved(property.id)}
+                                    className={`p-1 ${savedProperties.includes(property.id) ? 'text-red-500' : 'text-gray-400 hover:text-red-500'}`}>
+                                    <FiHeart className={savedProperties.includes(property.id) ? 'fill-current' : ''} />
+                                </button>
+                            </div>
+                            <p className="text-green-700 font-bold text-lg mt-2"> ${property.price.toLocaleString()} </p>
+                            <div className="flex mt-4 text-gray-600">
                                 <span className="mr-4">{property.beds} Beds</span>
                                 <span className="mr-4">{property.baths} Baths</span>
                                 <span>{property.sqft.toLocaleString()} sqft</span>
                             </div>
-                            <div className="mt-3 flex items-center text-gray-500">
+                            <div className="mt-3 flex items-center text-gray-500"> 
                                 <FiMapPin className="mr-1" />
                                 <span>{property.location}</span>
                             </div>
-                            <button
-                                className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                            {property.tags.length > 0 && (
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                    {property.tags.map(tag => (
+                                        <span key={tag} 
+                                            className="bg-green-100 text-green-700 font-medium px-2 py-1 rounded-full text-xs">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
+                            <button className="mt-4 w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-800">
                                 View Details
                             </button>
                         </div>
@@ -153,13 +160,13 @@ return (
         <Calculator />
         
         {/* Contact Realtor */}
-        <div className="bg-blue-600 text-white py-8 px-4">
+        <div className="bg-green-700 text-white py-8 px-4">
             <div className="container mx-auto text-center">
                 <h3 className="text-2xl font-bold mb-4">Can't Find Your Dream Home?</h3>
                 <p className="mb-6">Our agents will help you discover off-market properties</p>
                 <button 
                     onClick={() => navigate('/contact')}
-                    className="bg-white text-blue-600 px-6 py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+                    className="bg-white text-green-700 px-6 py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors">
                     Contact Realtor
                 </button>
             </div>

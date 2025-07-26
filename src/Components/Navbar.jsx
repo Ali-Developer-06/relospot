@@ -1,6 +1,7 @@
+import { useState } from 'react';
+import logo from '../assets/logo.png'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FiHome, FiSearch, FiHeart, FiUser, FiMenu, FiX, FiMessageSquare } from 'react-icons/fi';
-import { useState } from 'react';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,9 +19,11 @@ return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
             {/* Logo */}
-            <div 
-                className="text-2xl font-bold text-blue-600 cursor-pointer" 
-                onClick={() => navigate('/')}> Relospot
+            <div
+                className="cursor-pointer" 
+                onClick={() => navigate('/')}
+                >
+                    <img src={logo} className='w-20' alt="" />
             </div>
 
             {/* Desktop Navigation */}
@@ -29,7 +32,7 @@ return (
                     key={item.path}
                     to={item.path}
                     className={({ isActive }) => `flex items-center px-3 py-2 rounded-lg transition-colors 
-                    ${ isActive ? 'bg-blue-100 text-blue-600' : 'text-gray-700 hover:bg-gray-100'}`}
+                    ${ isActive ? 'bg-green-100 text-green-700' : 'text-gray-700 hover:bg-gray-100'}`}
                     onClick={() => {
                         if (item.path === '/auth') {
                         navigate('/auth', { state: { authType: 'login' }});

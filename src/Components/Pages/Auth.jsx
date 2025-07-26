@@ -97,7 +97,7 @@ const Auth = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="John Doe"
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700"
                   required/>
               </div>
             </div>
@@ -116,7 +116,7 @@ const Auth = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="john@example.com"
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700"
                 required/>
             </div>
           </div>
@@ -135,7 +135,7 @@ const Auth = () => {
                 onChange={handleInputChange}
                 placeholder="••••••••"
                 minLength="6"
-                className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700"
                 required/>
               <button
                 type="button"
@@ -151,7 +151,7 @@ const Auth = () => {
             <div className="flex justify-end">
               <Link 
                 to="/forgot-password"
-                className="text-sm text-blue-600 hover:underline">
+                className="text-sm text-green-700 hover:underline">
                 Forgot password?
               </Link>
             </div>
@@ -161,7 +161,7 @@ const Auth = () => {
             type="submit"
             disabled={isPending}
             className={`w-full py-3 rounded-lg flex items-center justify-center gap-2 ${
-              isPending ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'
+              isPending ? 'bg-green-400' : 'bg-green-700'
             } text-white transition-colors`}>
             {isPending ? (
               <>
@@ -178,7 +178,7 @@ const Auth = () => {
         <div className="mt-6 text-center">
           <button
             onClick={toggleAuthMode}
-            className="text-blue-600 font-medium hover:underline"
+            className="text-green-700 font-medium hover:underline"
             disabled={isPending}
           >
             {isLogin ? 'Need an account? Sign Up' : 'Already have an account? Login'}

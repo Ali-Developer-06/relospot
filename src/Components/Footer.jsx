@@ -31,7 +31,7 @@ const Footer = () => {
                             <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
                             <div className="flex">
                                 <input type="email" placeholder="Your Email" className="bg-gray-700 text-white px-4 py-2 rounded-l-lg outline-none w-full"/>
-                                <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg">Subscribe</button>
+                                <button className="bg-green-700 px-4 py-2 rounded-r-lg">Subscribe</button>
                             </div>
                         </div>
                     </div>

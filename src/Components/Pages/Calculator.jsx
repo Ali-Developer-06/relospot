@@ -22,7 +22,7 @@ const calculatePayment = () => {
 return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden border max-w-3xl mx-auto my-8 border-gray-200">
         {/* Header */}
-        <div className="bg-blue-600 p-4 text-white">
+        <div className="bg-green-700 p-4 text-white">
             <h3 className="font-bold text-lg flex items-center gap-2"> <FiDollarSign className="text-white" /> Mortgage Calculator </h3>
         </div>
 
@@ -37,7 +37,7 @@ return (
                         type="number"
                         value={homePrice}
                         onChange={(e) => setHomePrice(Number(e.target.value))}
-                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700"
                     />
                 </div>
                 <input
@@ -47,7 +47,7 @@ return (
                     step="50000"
                     value={homePrice}
                     onChange={(e) => setHomePrice(Number(e.target.value))}
-                    className="w-full mt-2 h-2 bg-blue-100 rounded-lg appearance-none cursor-pointer"
+                    className="w-full mt-2 h-2 bg-green-200 rounded-lg appearance-none cursor-pointer"
                 />
             </div>
 
@@ -60,7 +60,7 @@ return (
                         type="number"
                         value={downPayment}
                         onChange={(e) => setDownPayment(Number(e.target.value))}
-                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700"
                     />
                 </div>
                 <input
@@ -69,7 +69,7 @@ return (
                     max="50"
                     value={downPayment}
                     onChange={(e) => setDownPayment(Number(e.target.value))}
-                    className="w-full mt-2 h-2 bg-blue-100 rounded-lg appearance-none cursor-pointer"
+                    className="w-full mt-2 h-2 bg-green-200 rounded-lg appearance-none cursor-pointer"
                 />
             </div>
 
@@ -84,7 +84,7 @@ return (
                         step="0.1"
                         value={interestRate}
                         onChange={(e) => setInterestRate(Number(e.target.value))}
-                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700"
                     />
                 </div>
             </div>
@@ -98,7 +98,7 @@ return (
                     <select
                         value={loanTerm}
                         onChange={(e) => setLoanTerm(Number(e.target.value))}
-                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700">
                         <option value="15">15 years</option>
                         <option value="20">20 years</option>
                         <option value="30">30 years</option>
@@ -110,7 +110,7 @@ return (
             <div className="bg-blue-50 p-4 rounded-lg mt-4">
                 <div className="flex justify-between items-center">
                     <span className="font-medium">Monthly Payment:</span>
-                    <span className="text-2xl font-bold text-blue-600"> ${calculatePayment()} </span>
+                    <span className="text-2xl font-bold text-green-700"> ${calculatePayment()} </span>
                 </div>
                 <div className="text-xs text-gray-500 mt-2">
                     <p>Principal & Interest only</p>
@@ -119,7 +119,7 @@ return (
             </div>
 
             {/* CTA */}
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
+            <button className="w-full bg-green-700 text-white py-3 rounded-lg font-medium transition-colors">
                 Get Pre-Approved</button>
         </div>
     </div>
