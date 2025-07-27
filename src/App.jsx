@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Home from './Components/Pages/Home';
 import Auth from './Components/Pages/Auth';
+import Jobs from './Components/Pages/Jobs';
 import Saved from './Components/Pages/Saved';
 import Contact from './Components/Pages/Contact';
 import Properties from './Components/Pages/Properties';
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/properties" element={<Properties />} />
+        <Route path="/jobs" element={<Jobs />} />
         <Route path="/saved" element={<Saved />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/auth" element={<Auth />} />

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import logo from '../assets/logo.png'
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FiHome, FiSearch, FiHeart, FiUser, FiMenu, FiX, FiMessageSquare } from 'react-icons/fi';
+import { FiHome, FiSearch, FiHeart, FiUser, FiMenu, FiX,FiBriefcase, FiMessageSquare } from 'react-icons/fi';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,6 +10,7 @@ const Navbar = () => {
 const navItems = [
     { path: '/', name: 'Home', icon: <FiHome className="mr-1" /> },
     { path: '/properties', name: 'Properties', icon: <FiSearch className="mr-1" /> },
+    { path: '/jobs', name: 'Jobs', icon: <FiBriefcase className="mr-1" /> },
     { path: '/saved', name: 'Saved', icon: <FiHeart className="mr-1" /> },
     { path: '/contact', name: 'Contact', icon: <FiMessageSquare className="mr-1" /> },
     { path: '/auth', name: 'Account', icon: <FiUser className="mr-1" /> }
