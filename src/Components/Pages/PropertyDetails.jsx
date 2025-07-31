@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
+import properties from '../../Data/Properties.json';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FiMapPin, FiHome, FiDollarSign, FiLayers, FiX, FiCheck } from 'react-icons/fi';
-import properties from '../../Data/Properties.json';
 
 const PropertyDetails = () => {
     const { id } = useParams();
