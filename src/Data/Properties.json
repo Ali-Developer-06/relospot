@@ -20,5 +20,16 @@
       "location": "New York, NY",
       "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
       "tags": ["City View"]
+    },
+    {
+      "id": 3,
+      "title": "Condo in NYC",
+      "price": 750000,
+      "beds": 6,
+      "baths": 3,
+      "sqft": 1600,
+      "location": "Arizona, NY",
+      "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      "tags": ["City View", "Pool"]
     }
   ]

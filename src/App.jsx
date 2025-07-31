@@ -7,6 +7,7 @@ import Jobs from './Components/Pages/Jobs';
 import Saved from './Components/Pages/Saved';
 import Contact from './Components/Pages/Contact';
 import Properties from './Components/Pages/Properties';
+import { PropertyDetails } from './Components/Pages/PropertyDetails';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/properties" element={<Properties />} />
+        <Route path="/property/:id" element={<PropertyDetails />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/saved" element={<Saved />} />
         <Route path="/contact" element={<Contact />} />

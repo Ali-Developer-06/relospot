@@ -11,7 +11,7 @@ const navItems = [
     { path: '/', name: 'Home', icon: <FiHome className="mr-1" /> },
     { path: '/properties', name: 'Properties', icon: <FiSearch className="mr-1" /> },
     { path: '/jobs', name: 'Jobs', icon: <FiBriefcase className="mr-1" /> },
-    { path: '/saved', name: 'Saved', icon: <FiHeart className="mr-1" /> },
+    // { path: '/saved', name: 'Saved', icon: <FiHeart className="mr-1" /> },
     { path: '/contact', name: 'Contact', icon: <FiMessageSquare className="mr-1" /> },
     { path: '/auth', name: 'Account', icon: <FiUser className="mr-1" /> }
 ];

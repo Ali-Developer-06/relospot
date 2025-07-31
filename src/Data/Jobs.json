@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Licensed Real Estate Agent",
+        "company": "Prestige Properties",
+        "salary": "$90,000 - $150,000/yr",
+        "location": "Miami, FL",
+        "coordinates": "lat: 25.7617, lng: -80.1918",
+        "type": "Commission",
+        "posted": "New",
+        "description": "Join our elite team serving high-net-worth clients. Minimum 3 years experience required.",
+        "logo": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.1.0&auto=format&fit=crop&w=100&h=100&q=60"
+    },
+    {
+        "id": 2,
+        "title": "Commercial Property Manager",
+        "company": "Urban Spaces Group",
+        "salary": "$75,000 + Bonuses",
+        "location": "Austin, TX",
+        "coordinates": "lat: 30.2672, lng: -97.7431",
+        "type": "Full-time",
+        "posted": "2 days ago",
+        "description": "Manage Class A office buildings. CAM certification preferred.",
+        "logo": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.1.0&auto=format&fit=crop&w=100&h=100&q=60"
+    },
+    {
+        "id": 3,
+        "title": "Real Estate Marketing Specialist",
+        "company": "Luxury Listings Inc",
+        "salary": "$65,000 - $85,000/yr",
+        "location": "Remote",
+        "coordinates": null,
+        "type": "Part-time",
+        "posted": "1 week ago",
+        "description": "Digital marketing for luxury properties. Social media experience required.",
+        "logo": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.1.0&auto=format&fit=crop&w=100&h=100&q=60"
+    },
+    {
+        "id": 4,
+        "title": "Broker Associate",
+        "company": "Coastal Realty",
+        "salary": "$100,000 - $200,000/yr",
+        "location": "Fort Lauderdale, FL",
+        "coordinates": "lat: 26.1224, lng: -80.1373 ",
+        "type": "Commission",
+        "posted": "3 days ago",
+        "description": "Top-producing brokers preferred. Must have active Florida license.",
+        "logo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.1.0&auto=format&fit=crop&w=100&h=100&q=60"
+    }
+]
