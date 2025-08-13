@@ -62,8 +62,8 @@ return (
                         if (item.path === '/auth') {
                             navigate('/auth', { state: { authType: 'login' } });
                         }}}
-                        className={({ isActive }) => `flex items-center px-3 py-3 rounded-lg transition-colors 
-                        ${isActive ? 'bg-blue-100 text-blue-600' : 'text-gray-700 hover:bg-gray-100'}`}>
+                        className={({ isActive }) => `flex items-center px-3 py-3 rounded-lg transition-colors
+                        ${isActive ? 'bg-green-100 text-green-700' : 'text-gray-700 hover:bg-green-100'}`}>
                         {item.icon}
                         <span className="ml-2">{item.name}</span>
                     </NavLink>
